@@ -112,7 +112,7 @@ def send_emails_from_users_folder(sender_email, sender_password):
             line-height: 1.5;
         }}
         .middle-section img {{
-            max-width: 200px;
+            max-width: 80%;
             height: auto;
             margin: 10px 0;
             border: 2px solid #5966F3;
@@ -145,6 +145,7 @@ def send_emails_from_users_folder(sender_email, sender_password):
             .middle-section p {{
                 font-size: 14px;
             }}
+         
         }}
     </style>
 </head>
@@ -185,6 +186,6 @@ def send_emails_from_users_folder(sender_email, sender_password):
 # 
 # check this link : https://www.youtube.com/watch?v=g_j6ILT-X0k 
 
-sender_email = ""  # place the sirius gmail in here
-sender_password = ""  # sirius password in here
+sender_email = "a_kadache@estin.dz"  # place the sirius gmail in here
+sender_password = "titanos360"  # sirius password in here
 send_emails_from_users_folder(sender_email, sender_password)
