@@ -61,7 +61,7 @@ def send_emails_from_users_folder(sender_email, sender_password):
               
                 subject = "Welcome to Our Platform - Your QR Code"
                 body = f"""
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,115 +72,104 @@ def send_emails_from_users_folder(sender_email, sender_password):
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            padding: 0;
-            
             margin: 0;
-            
+            padding: 0;
         }}
         .container {{
-               border: 10px solid #5966F3;
+            max-width: 90%;
+            width: 600px;
+            margin: 20px auto;
+            border: 8px solid #5966F3;
             border-radius: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }}
-         .double{{
-                   font-family: 'Brush Script MT', cursive;
-            font-size: 52px;
-            font-weight: bold;
-       
-            color: white;
-            background-color: #5966F3;
-            
-
-            padding: 20px;
-         
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-    
-        }}
-
-        .middle-section {{
-           
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
+        }}
+        .header {{
+            background-color: #5966F3;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 48px;
+            font-weight: bold;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }}
+        .header p {{
+            margin: 0;
+        }}
+        .middle-section {{
+            padding: 20px;
             text-align: center;
         }}
         .middle-section h1 {{
             color: #4CAF50;
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 10px;
         }}
         .middle-section p {{
             font-size: 16px;
             margin-bottom: 20px;
+            line-height: 1.5;
+        }}
+        .middle-section img {{
+            max-width: 200px;
+            height: auto;
+            margin: 10px 0;
+            border: 2px solid #5966F3;
+            border-radius: 10px;
         }}
         .footer {{
-        
             background-color: #5966F3;
-            color: #fff;
+            color: white;
             text-align: center;
             padding: 20px;
             font-size: 14px;
-           
+            line-height: 1.5;
+        }}
+        .footer p {{
+            margin: 10px 0;
         }}
         .footer a {{
             color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }}
-        .footer a:hover {{
             text-decoration: underline;
         }}
-        .row{{
-            font-size: 30px;
-            font-weight: 900;
-        }}
-        .im {{
-            width: 50px;
-        }}
-        .im1 {{
-            width: 65px;
-        }}
-        .im2 {{
-            width: 50px;
-            margin-left: auto;
-        }}
-        .im3 {{
-            width: 120px;
+        /* Responsive Design */
+        @media (max-width: 600px) {{
+            .header {{
+                font-size: 36px;
+                padding: 20px;
+            }}
+            .middle-section h1 {{
+                font-size: 20px;
+            }}
+            .middle-section p {{
+                font-size: 14px;
+            }}
         }}
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Top Section -->
-       <div class="double">
-                <p> SIRIUS 101 <br> is here !! </p>
-          
+        <!-- Header Section -->
+        <div class="header">
+            <p>SIRIUS 101<br>is here!!</p>
         </div>
         <!-- Middle Section -->
         <div class="middle-section">
             <h1>Welcome to the Sirius 101 Workshop!</h1>
             <p>Dear <strong>{user_info['Full Name']}</strong>,</p>
-            <p>Congratulations! You have been accepted to the *Sirius 101 Workshop*. We are thrilled to have you join us for this exciting learning experience!</p>
-            <p>Below is your unique QR code. Please present it upon arrival to check in:</p>
+            <p>Congratulations! You have been accepted to the <em>Sirius 101 Workshop</em>. We are thrilled to have you join us for this exciting learning experience!</p>
+            <p>Please find your unique QR code below. Present it upon arrival to check in:</p>
             <img src="cid:qr_code_image" alt="Your QR Code">
             <p>We can't wait to see you there!</p>
-         
-         
         </div>
-
         <!-- Footer Section -->
         <div class="footer">
-         
-            <div class="row">
-                <p><em>Date:</em> 22/23 november<br>
-                    <em>Time:</em> 9 AM<br>
-                    <em>Location:</em> uknown</p>
-            </div>
+            <p><strong>Date:</strong> 22/23 November<br>
+               <strong>Time:</strong> 9 AM<br>
+               <strong>Location:</strong> TBD</p>
+            <p>Contact us if you have any questions.</p>
+            <p><a href="sirius101.vercel.app">Visit Our Website</a> | <a href="https://www.instagram.com/sirius.estin/">Contact Support</a></p>
         </div>
     </div>
 </body>
